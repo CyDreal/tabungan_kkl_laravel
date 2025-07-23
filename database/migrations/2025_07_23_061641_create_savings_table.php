@@ -19,9 +19,12 @@ return new class extends Migration
             $table->integer('week_number');
             $table->enum('payment_method', ['transfer', 'tunai']);
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->string('proof_file')->nullable();
+            $table->string('file_name')->nullable();
+            $table->string('file_url')->nullable();
             $table->text('notes')->nullable();
             $table->text('rejection_reason')->nullable();
-            $table->foreignId('confirmed_by')->nullable()->constrained('users');
+            $table->foreignId('confirmed_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamp('confirmed_at')->nullable();
             $table->timestamps();
         });
