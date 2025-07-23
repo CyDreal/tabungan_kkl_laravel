@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('nim')->unique();
             $table->enum('role', ['mahasiswa', 'bendahara', 'panitia'])->default('mahasiswa');
+            $table->timestamp('last_login')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
