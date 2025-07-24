@@ -7,9 +7,20 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
+// Semua role diarahkan ke dashboard mahasiswa
+Route::get('/dashboard', fn() => view('mahasiswa.dashboard'))
     ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+    ->name('mahasiswa.dashboard');
+
+// Nonaktifkan dashboard untuk panitia/admin/bendahara
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
+
+// Route::prefix('mahasiswa')->middleware(['auth'])->group(function () {
+//     Route::get('/dashboard', fn() => view('mahasiswa.dashboard'))
+//         ->name('mahasiswa.dashboard');
+// });
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
@@ -19,4 +30,4 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
