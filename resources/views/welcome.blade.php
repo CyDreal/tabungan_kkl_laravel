@@ -39,7 +39,7 @@
             }
         </style>
     </head>
-    <body class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
+    <body class="dark min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
         <!-- Header Navigation -->
         <header class="relative z-10 w-full px-6 py-4">
             @if (Route::has('login'))
