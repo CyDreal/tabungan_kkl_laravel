@@ -131,7 +131,51 @@
                 </form>
             </x-card-main>
             {{-- end form menabung section --}}
-
+            {{-- riwayat setoran section --}}
+            <x-card-main class="w-full mt-4">
+                <x-title>Riwayat Setoran</x-title>
+                <div class="overflow-x-auto">
+                    <x-table>
+                        <x-table-thead>
+                            <tr>
+                                <x-table-th>Setoran Ke</x-table-th>
+                                <x-table-th>Tanggal</x-table-th>
+                                <x-table-th>Jumlah</x-table-th>
+                                <x-table-th>Status</x-table-th>
+                                <x-table-th>Metode</x-table-th>
+                                <x-table-th>Aksi</x-table-th>
+                            </tr>
+                        </x-table-thead>
+                        <tbody>
+                            <tr class="border-t border-[var(--border)]">
+                                <td class="px-4 py-2">1</td>
+                                <td class="px-4 py-2">2025-08-04</td>
+                                <td class="px-4 py-2">Rp 100.000</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-1 rounded bg-[var(--muted)] text-xs">Menunggu</span>
+                                </td>
+                                <td class="px-4 py-2">Transfer</td>
+                                <td class="px-4 py-2">
+                                    <button class="px-3 py-1 rounded bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-semibold hover:bg-[var(--primary)]/90 transition">Detail</button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[var(--border)]">
+                                <td class="px-4 py-2">2</td>
+                                <td class="px-4 py-2">2025-08-05</td>
+                                <td class="px-4 py-2">Rp 200.000</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-1 rounded bg-[var(--primary)] text-xs">Disetujui</span>
+                                </td>
+                                <td class="px-4 py-2">Cash</td>
+                                <td class="px-4 py-2">
+                                    <button class="px-3 py-1 rounded bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-semibold hover:bg-[var(--primary)]/90 transition">Detail</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </x-table>
+                </div>
+            </x-card-main>
+            {{-- end riwayat setoran section --}}
         </div>
     </div>
 </x-layouts.app>
